@@ -8,7 +8,7 @@ this is a stage-0 bootstrap compiler, the lowest level of a self-hosting compile
 
 ### basic syntax
 
-´´´
+```
 # function definition
 main: (p0, p1) {
     x0 = p0 + p1;
@@ -26,7 +26,7 @@ data: integer[100]
 
 # character array
 text: character[256]
-´´´
+```
 
 ### variables
 
@@ -37,41 +37,41 @@ c0 uses positional variable names:
 - **globals**: named identifiers (e.g., `counter`, `buffer`)
 - **macros**: UPPERCASE identifiers are compile-time constants
 
-´´´
+```
 add: (p0, p1) {
     x0 = p0 + p1; # x0 is a local variable
     return x0
 }
 
 MAX_SIZE => 1024 # macro definition
-´´´
+```
 
 ### data types
 
 c0 is untyped at runtime, everything is a machine word. the type annotations `integer` and `character` only affect array allocation size.
 
-- ´integer[N]´ allocates Nx4 bytes
-- ´character[N]´ allocates N bytes
+- `integer[N]` allocates Nx4 bytes
+- `character[N]` allocates N bytes
 
 ### operators
 
 | precedence | operators | description |
 |------------|-----------|-------------|
-| highest | ´()´, ´[]´ | grouping, array index |
-| | ´*´ (prefix) | dereference |
-| | ´&´ | address of |
-| | ´-´, ´+´, ´~´ | unary minus, plus, bitwise NOT |
-| | ´*´, ´/´, ´%´ | multiply, divide, modulo |
-| | ´+´, ´-´ | add, subtract |
-| | ´<´, ´>´, ´<=´, ´>=´ | relational |
-| | ´==´, ´!=´ | equality |
-| | ´&´ | bitwise AND |
-| | ´^´ | bitwise XOR |
-| lowest | ´\|´ | bitwise OR |
+| highest | `()`, `[]` | grouping, array index |
+| | `*` (prefix) | dereference |
+| | `&` | address of |
+| | `-`, `+`, `~` | unary minus, plus, bitwise NOT |
+| | `*`, `/`, `%` | multiply, divide, modulo |
+| | `+`, `-` | add, subtract |
+| | `<`, `>`, `<=`, `>=` | relational |
+| | `==`, `!=` | equality |
+| | `&` | bitwise AND |
+| | `^` | bitwise XOR |
+| lowest | `\|` | bitwise OR |
 
 ### control flow
 
-´´´
+```
 # if statement
 if (condition) {
     # then branch
@@ -93,11 +93,11 @@ while (condition) {
 label myloop;
 # ... code ...
 goto myloop
-´´´
+```
 
 ### functions
 
-´´´
+```
 # definition
 factorial: (p0) {
     if (p0 <= 1) {
@@ -110,11 +110,11 @@ factorial: (p0) {
 
 # call
 result = factorial(5)
-´´´
+```
 
 ### memory Operations
 
-´´´
+```
 # array access
 arr: [10, 20, 30]
 x0 = arr[1]          # x0 = 20
@@ -131,11 +131,11 @@ ptr = &p0            # get address of parameter
 # character read/write (byte operations)
 ch = rch(buffer, 0)  # read byte at buffer+0
 wch(buffer, 0, 65)   # write byte 65 ('A') at buffer+0
-´´´
+```
 
 ### special statements
 
-´´´
+```
 # export symbol (make globally visible)
 export myfunction
 
@@ -147,7 +147,7 @@ allocate 100         # allocate 100 words on stack
 
 # include another source file
 include otherfile    # includes "otherfile.s"
-´´´
+```
 
 ### syscalls
 
