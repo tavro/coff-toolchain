@@ -464,7 +464,7 @@ _lexer_s0:
 _lexer_s1:
     call    _lexer_consume
     la      t0, token_tag
-    li      t1, TOK_INTEGER
+    li      t1, T_INTEGER
     sw      t1, 0(t0)
     la      t0, token_value
     sw      zero, 0(t0)
@@ -485,7 +485,7 @@ _lexer_s2:
     sw      t1, 0(t0)
 
     la      t0, token_tag
-    li      t1, TOK_INTEGER
+    li      t1, T_INTEGER
     sw      t1, 0(t0)
 
     call    _lexer_lookahead
@@ -501,7 +501,7 @@ _lexer_s3:
     call    _lexer_consume
 
     la      t0, token_tag
-    li      t1, TOK_IDENTIFIER
+    li      t1, T_IDENTIFIER
     sw      t1, 0(t0)
 
     call    _lexer_lookahead
@@ -550,7 +550,7 @@ _lexer_s5:
 _lexer_s6:
     call    _lexer_consume      # consume closing '
     la      t0, token_tag
-    li      t1, TOK_INTEGER
+    li      t1, T_INTEGER
     sw      t1, 0(t0)
     j       _lexer_s16
 
