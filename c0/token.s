@@ -9,7 +9,7 @@
 .equ T_IDENTIFIER,     258
 .equ T_MACRO,          259
 .equ T_VARIABLE,       260
-.equ T_PARAM,          261
+.equ T_PARAMETER,      261
 
 .equ T_IF,             262
 .equ T_ELSE,           263
@@ -40,5 +40,7 @@
 
 .equ T_END,            281
 
+# lexer constants
+.equ RESERVED_WORDS_ID_BEGIN, 262
 .equ MAX_TOKEN_LENGTH, 512
 

@@ -79,7 +79,7 @@ character_2_escape:
 
 reserved_words:
     .word if_text, else_text, while_text, goto_text, label_text
-    .word return_text, sysall_text, export_text, allocate_text
+    .word return_text, syscall_text, export_text, allocate_text
     .word include_text, write_text, read_text, integer_text, character_text, 0
 
 if_text:        .string "if"
@@ -604,7 +604,7 @@ _lexer_s9:
 _lexer_s9_loop:
     call    _lexer_lookahead
 
-    li      t0, C_DQUOTE
+    li      t0, C_DOUBLE_QUOTE
     beq     a0, t0, _lexer_s10  # end of string
     li      t0, C_BACKSLASH
     beq     a0, t0, _lexer_s11  # escape sequence

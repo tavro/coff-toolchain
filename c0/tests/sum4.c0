@@ -1,0 +1,12 @@
+# multiple parameters test
+# expected result: 100 (10 + 20 + 30 + 40)
+
+sum4: (p0, p1, p2, p3) {
+    x0 = p0 + p1;
+    x1 = p2 + p3;
+    return x0 + x1
+}
+
+main: () {
+    return sum4(10, 20, 30, 40)
+}

@@ -1,0 +1,6 @@
+# simple return test
+# expected result: 42
+
+main: () {
+    return 42
+}

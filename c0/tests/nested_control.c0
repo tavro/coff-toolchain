@@ -1,0 +1,18 @@
+# nested control flow test (if inside while)
+# expected result: 103
+# logic: loop 3 times (x0 = 0,1,2), add 1 each time,
+#        when x0 == 1, add 100 extra
+# result: 1 + (1 + 100) + 1 = 103
+
+main: () {
+    x0 = 0;
+    x1 = 0;
+    while (x0 < 3) {
+        if (x0 == 1) {
+            x1 = x1 + 100
+        };
+        x1 = x1 + 1;
+        x0 = x0 + 1
+    };
+    return x1
+}

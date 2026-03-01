@@ -1110,12 +1110,12 @@ _end_frame:
 # variables #
 #############
 
-# void _xvar(int n)
+# void _variable(int n)
 # Eemit reference to local variable: offset(s0)
 # frame layout: ra at -4(s0), saved s0 at -8(s0), params p0-p7 at -12 to -40(s0)
 # locals start at -44(s0): x0 at -44(s0), x1 at -48(s0), etc.
-.global _xvar
-_xvar:
+.global _variable
+_variable:
     addi    sp, sp, -16
     sw      ra, 12(sp)
     sw      a0, 8(sp)
@@ -1140,13 +1140,13 @@ _xvar:
     addi    sp, sp, 16
     ret
 
-# void _pvar(int n)
+# void _parameter(int n)
 # emit reference to parameter variable
 # parameters are saved at negative offsets from s0:
 # p0 at -12(s0), p1 at -16(s0), etc.
 # formula: -((n+3)*4)
-.global _pvar
-_pvar:
+.global _parameter
+_parameter:
     addi    sp, sp, -16
     sw      ra, 12(sp)
     sw      a0, 8(sp)

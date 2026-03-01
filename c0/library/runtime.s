@@ -13,7 +13,7 @@
 .data
 
 .comm read_buffer, READ_BUFFER_SIZE, 1
-read_buffer_beging: .word 0
+read_buffer_begin: .word 0
 read_buffer_end:    .word 0
 
 .comm write_buffer, WRITE_BUFFER_SIZE, 1

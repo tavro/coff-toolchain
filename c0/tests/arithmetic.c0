@@ -1,0 +1,6 @@
+# arithmetic test
+# expected result: 30 ((1+2)*10)
+
+main: () {
+    return (1 + 2) * 10
+}

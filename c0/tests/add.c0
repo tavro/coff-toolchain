@@ -1,0 +1,10 @@
+# function call with parameters test
+# expected result: 7 (3 + 4)
+
+add: (p0, p1) {
+    return p0 + p1
+}
+
+main: () {
+    return add(3, 4)
+}

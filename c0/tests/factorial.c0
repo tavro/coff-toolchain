@@ -1,0 +1,15 @@
+# factorial test
+# expected result: 120 (5! = 120)
+
+factorial: (p0) {
+    if (p0 <= 1) {
+        return 1
+    };
+    x0 = p0 - 1;
+    x1 = factorial(x0);
+    return p0 * x1
+}
+
+main: () {
+    return factorial(5)
+}
